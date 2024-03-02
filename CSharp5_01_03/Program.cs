@@ -1,10 +1,22 @@
 ﻿namespace CSharp5_01_03
 {
-    internal class Program
+    public class Program
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("Hello, World!");
+            Console.OutputEncoding = System.Text.Encoding.Unicode;
+
+            Product product = new Product();
+
+            Console.WriteLine("Ціна товару:");
+            product.DisplayAmount();
+
+            Console.WriteLine("Введіть суму на яку потрібно зменшити ціну товару:");
+            int decreaseAmount = int.Parse(Console.ReadLine());
+            product.DecreasePrice(decreaseAmount);
+
+            Console.WriteLine("Нова ціна товару:");
+            product.DisplayAmount();
         }
     }
 }
